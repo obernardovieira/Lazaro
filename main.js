@@ -1,52 +1,83 @@
 var inquirer = require('inquirer');
 var exec = require('exec-sh');
 
-var objservers = {
+var appData = {
 	'tst_auto':
 	[
-		'(10.10) fe', 
-		'(12.10) be'
+		{
+			'name': 'fe',
+			'ip': '10.10',
+			'user': 'myuuser',
+			'password': 'pass'
+		}, 
+		{
+			'name': 'be',
+			'ip': '10.20',
+			'user': 'myuuser',
+			'password': 'pass'
+		}
 	],
 	'dev':
 	[
-		'(20.10) fe', 
-		'(22.10) be'
+		{
+			'name': 'fe',
+			'ip': '20.10',
+			'user': 'myuuser',
+			'password': 'pass'
+		},
+		{
+			'name': 'be',
+			'ip': '20.20',
+			'user': 'myuuser',
+			'password': 'pass'
+		}
 	]
-};
+}
 
 
 
 inquirer.prompt({
 	type: 'list',
 	name: 'environment',
-	message: "Which environment?",
+	message: 'Which environment?',
 	choices: () => {
-		var servers = []
-		for(var exKey in objservers) {
-			servers.push(exKey);
+		var groups = []
+		for(var group in appData) {
+			groups.push(group)
 		}
-		return servers
+		return groups
 	}
 }).then(answers => {
 
+	var actualEnvironment = answers.environment
 	var questionServer = {
 		type: 'list',
 		name: 'server',
-		message: "Which server?",
-		choices: objservers[answers.environment]
+		message: 'Which server?',
+		choices: () => {
+			var servers = []
+			appData[answers.environment].forEach(arrayItem => {
+				servers.push(arrayItem.name)
+			})
+			return servers
+		}
 	}
 
 	inquirer.prompt([questionServer]).then(answers => {
 
-		var str = answers.server;
-		var regexp = /\((.*)\)/;
-		var matches_array = str.match(regexp)[1]
-
-		exec("ssh user@" + matches_array, function(err) {
-			if (err) {
-				console.log("Exit code: ", err.code);
-				return;
+		var serverInfo
+		appData[actualEnvironment].forEach(arrayItem => {
+			if(arrayItem.name == answers.server) {
+				serverInfo = arrayItem
+				return
 			}
-		});
-	});
-});
+		})
+
+		exec('ssh ' + serverInfo.user + '@' + serverInfo.ip, err => {
+			if (err) {
+				console.log('Exit code: ', err.code)
+				return
+			}
+		})
+	})
+})
