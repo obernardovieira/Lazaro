@@ -11,7 +11,7 @@ This is a simples nodejs app using [inquirer][inquirer-url] and [exec-sh][exec-s
 ## Install
 Easy as :tada:
 ```bash
-$ curl -sL https://github.com/obernardovieira/Lazaro | sudo -E bash -
+$ curl -sL https://raw.githubusercontent.com/obernardovieira/Lazaro/master/install.sh | sudo -E bash -
 ```
 
 ## Uninstall
@@ -31,8 +31,10 @@ $ lazaro --help
 ```
 The `add` option:
 - [ ] TODO
+
 The `remove` option:
 - [ ] TODO
+
 The `edit` option:
 - [ ] TODO
 
