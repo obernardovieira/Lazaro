@@ -1,0 +1,9 @@
+usage:
+
+  lazaro [options]
+ 
+    Options are : add, remove, edit
+    Not yet implemented!
+
+  lazaro
+

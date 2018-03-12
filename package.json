@@ -1,17 +1,20 @@
 {
   "name": "lazaro",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Connection manager",
-  "main": "main.js",
+  "main": "index.js",
+  "bin": {
+    "lazaro": "bin/cmd.js"
+  },
   "scripts": {
-    "start": "node main.js"
+    "start": "node index.js"
   },
   "repository": "https://github.com/obernardovieira/Lazaro",
   "keywords": [
     ""
   ],
   "author": "obernardovieira",
-  "license": "CC0-1.0",
+  "license": "MIT",
   "dependencies": {
     "inquirer": "^5.1.0",
     "exec-sh": "^0.2.1"
