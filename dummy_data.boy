@@ -1,0 +1,23 @@
+{
+	"tst_auto":
+	[
+		{
+			"name": "frontend",
+			"ip": "192.168.56.20",
+			"user": "user1"
+		}, 
+		{
+			"name": "backend",
+			"ip": "192.168.56.21",
+			"user": "user2"
+		}
+	],
+	"dev":
+	[
+		{
+			"name": "backend",
+			"ip": "192.168.56.22",
+			"user": "user3"
+		}
+	]
+}
