@@ -9,22 +9,18 @@ exec_cmd() {
     bash -c "$1"
 }
 
-install_nodejs() {
-    exec_cmd 'curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -'
-    exec_cmd 'sudo apt install -y build-essential nodejs'
-}
-
-install_npm() {
-    exec_cmd 'sudo apt install -y npm'
+install_software() {
+    exec_cmd 'sudo apt install -y build-essential git nodejs'
 }
 
 install_lazaro() {
-    exec_cmd 'wget -0 https://github.com/obernardovieira/Lazaro.git'
-    exec_cmd 'cd Lazaro && sudo npm install'
+    exec_cmd 'git clone https://github.com/obernardovieira/Lazaro.git Lazaro'
+    exec_cmd 'cd Lazaro'
+    exec_cmd 'sudo npm install'
     exec_cmd 'sudo npm install -g .'
-    exec_cmd 'cd .. && rm -r Lazaro'
+    exec_cmd 'cd ..'
+    exec_cmd 'rm -rf Lazaro'
 }
 
-install_nodejs()
-install_npm()
-install_lazaro()
+install_software
+install_lazaro
