@@ -14,10 +14,11 @@ install_software() {
 }
 
 install_lazaro() {
-    exec_cmd 'git clone https://github.com/obernardovieira/Lazaro.git Lazaro'
-    exec_cmd 'sudo npm --prefix Lazaro install'
-    exec_cmd 'sudo npm install -g ./Lazaro'
-    exec_cmd 'rm -rf Lazaro'
+    app_dir = '/home/$USER/.lazaro/app'
+    exec_cmd 'mkdir -p $app_dir'
+    exec_cmd 'git clone https://github.com/obernardovieira/Lazaro.git $app_dir'
+    exec_cmd 'sudo npm --prefix $app_dir install'
+    exec_cmd 'sudo npm install -g $app_dir'
 }
 
 install_software
