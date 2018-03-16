@@ -21,7 +21,7 @@
     "friendly"
   ],
   "author": "obernardovieira",
-  "license": "GPL-3.0-only",
+  "license": "GPLv3",
   "dependencies": {
     "inquirer": "^5.1.0",
     "exec-sh": "^0.2.1"
