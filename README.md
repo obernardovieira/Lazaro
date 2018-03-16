@@ -1,5 +1,6 @@
 # Lazaro
-Lazaro is a command line application that lets you choose and connect a given list of servers.<br><br>
+Lazaro is a command line application that lets you choose and connect a given list of servers.<br>
+Maybe you had this problem before, maybe not, but when you have a list of servers and you don't know all the ip's, you don't want to set alias to all of them, also you use tmux and you want to start more than one connection in the same window and see all of them at once. How you gonna do it? Lazaro ...<br><br>
 ![lazaro-terminal](lazaro.gif)
 
 ## Who may find this useful
