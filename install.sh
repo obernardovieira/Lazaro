@@ -15,10 +15,8 @@ install_software() {
 
 install_lazaro() {
     exec_cmd 'git clone https://github.com/obernardovieira/Lazaro.git Lazaro'
-    exec_cmd 'cd Lazaro'
-    exec_cmd 'sudo npm install'
-    exec_cmd 'sudo npm install -g .'
-    exec_cmd 'cd ..'
+    exec_cmd 'sudo npm --prefix Lazaro install'
+    exec_cmd 'sudo npm install -g ./Lazaro'
     exec_cmd 'rm -rf Lazaro'
 }
 

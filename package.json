@@ -11,7 +11,14 @@
   },
   "repository": "https://github.com/obernardovieira/Lazaro",
   "keywords": [
-    ""
+    "lazaro",
+    "server",
+    "management",
+    "manager",
+    "list",
+    "ssh",
+    "terminal",
+    "friendly"
   ],
   "author": "obernardovieira",
   "license": "GPL-3.0-only",
