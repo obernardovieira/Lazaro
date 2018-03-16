@@ -1,13 +1,13 @@
 # Lazaro
-Lazaro is a command line application that lets you choose and connect a given list of servers.<br>
-Maybe you had this problem before, maybe not, but when you have a list of servers and you don't know all the ip's, you don't want to set alias to all of them, also you use tmux and you want to start more than one connection in the same window and see all of them at once. How you gonna do it? Lazaro ...<br><br>
+Lazaro is a command line application that lets you choose and connect a given list of servers.<br><br>
 ![lazaro-terminal](lazaro.gif)
 
 ## Who may find this useful
-Everyone that has a big list of servers and prefer to have a command line app to help select a server instead of look for the ip everytime that wants to connect.
+Maybe you had this problem before, maybe not, but when you have a list of servers and you don't know all the ip's, you don't want to set alias to all of them, also you use tmux and you want to start more than one connection in the same window and see all of them at once. How you gonna do it? Lazaro ...<br>
+So, it's for everyone that has a big list of servers and prefer to have a command line app to help select a server instead of look for the ip everytime that wants to connect.
 
 ## How it works
-This is a simples nodejs app using [inquirer][inquirer-url] and [exec-sh][exec-sh-url]. With inquirer it's possible to make questions and have a list has an option. Then, with exec-sh, an ssh connection is run.
+This is a simples nodejs app using [inquirer][inquirer-url] and [exec-sh][exec-sh-url]. With inquirer it's possible to make questions and have a list as an option. Then, with exec-sh, start an ssh connection.
 
 ## Install
 Easy as :tada:
