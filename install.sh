@@ -10,7 +10,7 @@ exec_cmd() {
 }
 
 install_software() {
-    exec_cmd 'sudo apt install -y build-essential git nodejs'
+    exec_cmd 'sudo apt install -y build-essential git nodejs npm'
 }
 
 install_lazaro() {
