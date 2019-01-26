@@ -1,23 +1,27 @@
-{
-	"tst_auto":
-	[
-		{
-			"name": "frontend",
-			"ip": "192.168.56.20",
-			"user": "user1"
-		}, 
-		{
-			"name": "backend",
-			"ip": "192.168.56.21",
-			"user": "user2"
-		}
-	],
-	"dev":
-	[
-		{
-			"name": "backend",
-			"ip": "192.168.56.22",
-			"user": "user3"
-		}
-	]
-}
+[
+    {
+        "name": "local",
+        "items": [
+            {
+                "name": "yara-pc",
+                "ip": "192.168.10.1",
+                "user": "yara"
+            }
+        ]
+    },
+    {
+        "name": "aws",
+        "items": [
+            {
+                "name": "jake-pc",
+                "ip": "221.168.10.1",
+                "user": "yara"
+            },
+            {
+                "name": "make-pc",
+                "ip": "223.168.10.1",
+                "user": "yara"
+            }
+        ]
+    }
+]
