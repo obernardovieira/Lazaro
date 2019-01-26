@@ -7,7 +7,8 @@
         "lazaro": "bin/cmd.js"
     },
     "scripts": {
-        "start": "node -r esm src/index.js"
+        "start": "node -r esm src/index.js",
+        "test": "echo \"No tests yet!\"; exit 1"
     },
     "repository": "https://github.com/obernardovieira/Lazaro",
     "keywords": [
@@ -23,13 +24,14 @@
     "author": "obernardovieira",
     "license": "MIT",
     "dependencies": {
-        "exec-sh": "0.3.2",
-        "inquirer": "6.2.1",
-        "esm": "3.1.3",
         "eslint": "5.12.1",
         "eslint-config-airbnb": "17.1.0",
         "eslint-plugin-import": "2.15.0",
         "eslint-plugin-jsx-a11y": "6.2.0",
-        "eslint-plugin-react": "7.12.4"
+        "eslint-plugin-react": "7.12.4",
+        "esm": "3.1.3",
+        "exec-sh": "0.3.2",
+        "inquirer": "6.2.1",
+        "lodash.where": "^3.1.0"
     }
 }
