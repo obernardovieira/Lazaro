@@ -1,13 +1,13 @@
 {
     "name": "lazaro",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Connection manager",
     "main": "index.js",
     "bin": {
         "lazaro": "bin/cmd.js"
     },
     "scripts": {
-        "start": "nodejs index.js"
+        "start": "node -r esm src/index.js"
     },
     "repository": "https://github.com/obernardovieira/Lazaro",
     "keywords": [
@@ -23,8 +23,9 @@
     "author": "obernardovieira",
     "license": "MIT",
     "dependencies": {
-        "eslint": "4.19.1",
-        "exec-sh": "0.2.1",
-        "inquirer": "5.1.0"
+        "eslint": "5.12.1",
+        "exec-sh": "0.3.2",
+        "inquirer": "6.2.1",
+        "esm": "3.1.3"
     }
 }
