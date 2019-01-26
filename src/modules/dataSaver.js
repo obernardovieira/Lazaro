@@ -1,17 +1,14 @@
-const fs = require('fs')
-const os = require('os')
-const fileName = '/.lazaro/data.boy'
+const fs = require('fs');
+const os = require('os');
+
+const fileName = '/.lazaro/data.boy';
 
 module.exports = {
-
-    load: function () {
+    load: () => {
         if (fs.existsSync(os.homedir() + fileName)) {
             return fs.readFileSync(os.homedir() + fileName, 'utf8');
         }
-        return '[]'
+        return '[]';
     },
-
-    save: function (dataToSave) {
-        return fs.writeFileSync(os.homedir() + fileName, dataToSave, 'utf8')
-    }
-}
+    save: dataToSave => fs.writeFileSync(os.homedir() + fileName, dataToSave, 'utf8'),
+};

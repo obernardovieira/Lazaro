@@ -1,13 +1,13 @@
 #!/usr/bin/env node
-var fs = require('fs');
-var path = require('path');
-var lazaro = require('../src/');
-var options = process.argv[2];
+const fs = require('fs');
+const path = require('path');
+const lazaro = require('../src/');
+
+const options = process.argv[2];
 
 if (options === '-h' || options === '--help') {
-    return fs.createReadStream(path.join(__dirname, 'usage.txt'))
-        .pipe(process.stdout)
-        ;
+    fs.createReadStream(path.join(__dirname, 'usage.txt'))
+        .pipe(process.stdout);
+} else {
+    lazaro();
 }
-
-lazaro()

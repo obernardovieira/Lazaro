@@ -1,55 +1,49 @@
-var inquirer = require('inquirer');
-var exec = require('exec-sh');
-var dataSaver = require('./modules/dataSaver');
+const inquirer = require('inquirer');
+const exec = require('exec-sh');
+const dataSaver = require('./modules/dataSaver');
 
 
-module.exports = function () {
-
-    var appData = JSON.parse(dataSaver.load());
-
+module.exports = () => {
+    const appData = JSON.parse(dataSaver.load());
     inquirer.prompt({
         type: 'list',
         name: 'environment',
         message: 'Which environment?',
         choices: () => {
-            var groups = [];
-            for (var group in appData) {
+            const groups = [];
+            for (const group in appData) {
                 groups.push(group);
             }
             return groups;
-        }
-    }).then(answers => {
-
-        var actualEnvironment = answers.environment;
-        var questionServer = {
+        },
+    }).then((environment) => {
+        const actualEnvironment = environment.environment;
+        const questionServer = {
             type: 'list',
             name: 'server',
             message: 'Which server?',
             choices: () => {
-                var servers = []
-                appData[answers.environment].forEach(arrayItem => {
+                const servers = [];
+                appData[environment.environment].forEach((arrayItem) => {
                     servers.push(arrayItem.name);
-                })
+                });
                 return servers;
-            }
+            },
         };
 
-        inquirer.prompt([questionServer]).then(answers => {
-
-            var serverInfo;
-            appData[actualEnvironment].forEach(arrayItem => {
-                if (arrayItem.name == answers.server) {
+        inquirer.prompt([questionServer]).then((server) => {
+            let serverInfo;
+            appData[actualEnvironment].forEach((arrayItem) => {
+                if (arrayItem.name === server.server) {
                     serverInfo = arrayItem;
-                    return;
                 }
             });
 
-            exec('ssh ' + serverInfo.user + '@' + serverInfo.ip, err => {
+            exec(`ssh ${serverInfo.user}@${serverInfo.ip}`, (err) => {
                 if (err) {
                     console.log('Exit code: ', err.code);
-                    return;
                 }
             });
         });
     });
-}
+};
